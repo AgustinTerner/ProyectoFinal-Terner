@@ -1,0 +1,1544 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$margin-top-imgs: 50px;
+$margin-top-h2-h3: 100px;
+$margin-main: 20px;
+$margin-top-main: 100px;
+$font-size-h3: larger;
+$font-size-h2: x-large;
+
+$color-h2-h3: (
+    "gris": gray,
+    "gris-oscuro":darkgray,
+);
+
+@mixin main-contacto-desktop {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 2px;
+    border-bottom: 2px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: lightgray;
+}
+
+@mixin main-contacto-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: lightgray;
+}
+
+@mixin main-contacto-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: lightgray;
+}
+
+/*desktop design - index*/
+
+@media screen and (min-width: 1025px) {
+    .body_index {
+        width: 100%;
+
+        main {
+            .img_principal img {
+                width: 100%;
+            }
+
+            h2 {
+                margin-top: $margin-top-h2-h3;
+                color: map-get($color-h2-h3, gris-oscuro);
+                text-align: center;
+                font-size: $font-size-h2;
+            }
+
+            .imgs_secundarias {
+                margin-top: $margin-top-imgs;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+
+                img {
+                    width: 500px;
+                }
+            }
+
+            .img_felices {
+                text-align: center;
+
+                img {
+                    margin-top: $margin-top-imgs;
+                    width: 800px;
+                }
+            }
+        }
+
+        footer {
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: map-get($color-h2-h3, gris);
+                    margin-top: $margin-top-h2-h3;
+                    font-size: $font-size-h3;
+                }
+
+                a img {
+                    margin: 50px;
+                    width: 50px;
+                    height: 50px;
+                    transition: 0.3s;
+                }
+
+                a img:hover {
+                    transform: scale(1.3);
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+/*tablet design - index*/
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .body_index {
+        width: 100%;
+
+        main {
+            margin: 0 $margin-main;
+
+            .img_principal img {
+                width: 100%;
+            }
+
+            h2 {
+                margin-top: $margin-top-h2-h3;
+                color: map-get($color-h2-h3, gris-oscuro);
+                text-align: center;
+                font-size: $font-size-h2;
+            }
+
+            .imgs_secundarias {
+                margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 50px;
+
+                img {
+                    width: 450px;
+                }
+            }
+
+            .img_felices {
+                text-align: center;
+
+                img {
+                    margin-top: $margin-top-imgs;
+                    width: 500px;
+                }
+            }
+        }
+
+        footer {
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: map-get($color-h2-h3, gris);
+                    margin-top: $margin-top-h2-h3;
+                    font-size: $font-size-h3;
+                }
+
+                a img {
+                    margin: 50px;
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*mobile design - index*/
+
+@media screen and (max-width: 480px) {
+    .body_index {
+        width: 100%;
+
+        main {
+            margin: 0 $margin-main;
+
+            .img_principal img {
+                margin-top: $margin-top-imgs;
+                width: 100%;
+            }
+
+            h2 {
+                margin-top: $margin-top-h2-h3;
+                color: map-get($color-h2-h3, gris-oscuro);
+                text-align: center;
+                font-size: $font-size-h2;
+            }
+
+            .imgs_secundarias {
+                margin-top: $margin-top-imgs;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 50px;
+
+                img {
+                    width: 250px;
+                }
+            }
+
+            .img_felices {
+                text-align: center;
+
+                img {
+                    margin-top: $margin-top-imgs;
+                    width: 300px;
+                }
+            }
+        }
+
+        footer {
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: map-get($color-h2-h3, gris);
+                    margin-top: $margin-top-h2-h3;
+                    font-size: $font-size-h3;
+                }
+
+                a img {
+                    margin: 50px;
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*desktop design - contacto*/
+
+@media screen and (min-width: 1025px) {
+    .body_contacto {
+        width: 100%;
+
+        main {
+            @include main-contacto-desktop();
+
+            form {
+                display: grid;
+                grid-template-rows: repeat(4, 100px);
+                margin: 50px 150px;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    input {
+                        height: 25px;
+                        border: 2px;
+                        border-radius: 10px;
+                        border-color: gray;
+                        border-style: solid;
+                    }
+
+                    textarea {
+                        height: 100px;
+                        border: 2px;
+                        border-color: gray;
+                        border-style: solid;
+                    }
+
+                    label {
+                        color: gray;
+                        font-size: large;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                }
+
+                .buttons {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    column-gap: 50px;
+                    padding: 30px 0;
+
+                    button {
+                        color: gray;
+                        background-color: lightgray;
+                        padding: 20px;
+                        border-style: none;
+                    }
+
+                    button:active {
+                        background-color: darkgray;
+                    }
+                }
+            }
+
+            .numero_tel_wsp {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                justify-content: center;
+                align-items: center;
+
+                h2 {
+                    color: gray;
+                    font-size: $font-size-h2;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 20px;
+                }
+            }
+        }
+
+        footer {
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: map-get($color-h2-h3, gris);
+                    margin-top: $margin-top-h2-h3;
+                    font-size: $font-size-h3;
+                }
+
+                a img {
+                    margin: 50px;
+                    width: 50px;
+                    height: 50px;
+                    transition: 0.3s;
+                }
+
+                a img:hover {
+                    transform: scale(1.3);
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+/*tablet design - contacto*/
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .body_contacto {
+        width: 100%;
+
+        main {
+            margin: 0 $margin-main;
+            @include main-contacto-tablet();
+            margin-top: $margin-top-main;
+
+            form {
+                display: grid;
+                grid-template-rows: repeat(4, 100px);
+                margin: 50px 150px;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    input {
+                        height: 25px;
+                        border: 2px;
+                        border-radius: 10px;
+                        border-color: gray;
+                        border-style: solid;
+                    }
+
+                    textarea {
+                        height: 100px;
+                        border: 2px;
+                        border-color: gray;
+                        border-style: solid;
+                    }
+
+                    label {
+                        color: gray;
+                        font-size: large;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                }
+
+                .buttons {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    column-gap: 50px;
+                    padding: 30px 0;
+
+                    button {
+                        color: gray;
+                        background-color: lightgray;
+                        padding: 20px;
+                        border-style: none;
+                    }
+                }
+            }
+
+            .numero_tel_wsp {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                justify-content: center;
+                align-items: center;
+                row-gap: 50px;
+                margin-bottom: 50px;
+
+                h2 {
+                    color: gray;
+                    font-size: $font-size-h2;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 20px;
+                }
+            }
+        }
+
+        footer {
+            margin-bottom: 0;
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: map-get($color-h2-h3, gris);
+                    margin-top: $margin-top-h2-h3;
+                    font-size: $font-size-h3;
+                }
+
+                a img {
+                    margin: 50px;
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*mobile design - contacto*/
+
+@media screen and (max-width: 480px) {
+    .body_contacto {
+        width: 100%;
+
+        main {
+            margin: 0 $margin-main;
+            @include main-contacto-mobile();
+            margin-top: $margin-top-main;
+
+            form {
+                display: grid;
+                grid-template-rows: repeat(4, 100px);
+                margin: 50px 150px;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+
+                    input {
+                        height: 25px;
+                        border: 2px;
+                        border-radius: 10px;
+                        border-color: gray;
+                        border-style: solid;
+                    }
+
+                    textarea {
+                        height: 100px;
+                        border: 2px;
+                        border-color: gray;
+                        border-style: solid;
+                    }
+
+                    label {
+                        color: gray;
+                        font-size: large;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                }
+
+                .buttons {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    column-gap: 50px;
+                    padding: 30px 0;
+
+                    button {
+                        color: gray;
+                        background-color: lightgray;
+                        padding: 10px 30px;
+                        border-style: none;
+                    }
+                }
+            }
+
+            .numero_tel_wsp {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                justify-content: center;
+                align-items: center;
+                row-gap: 50px;
+                margin-bottom: 50px;
+
+                h2 {
+                    color: gray;
+                    font-size: $font-size-h2;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 20px;
+                }
+            }
+        }
+
+        footer {
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: map-get($color-h2-h3, gris);
+                    margin-top: $margin-top-h2-h3;
+                    font-size: $font-size-h3;
+                }
+
+                a img {
+                    margin: 50px;
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*desktop design - nosotros*/
+
+@media screen and (min-width: 1025px) {
+    .body_nosotros {
+        width: 100%;
+
+        main {
+            margin-top: $margin-top-main;
+            h2 {
+                color: gray;
+                text-align: center;
+                font-size: $font-size-h2;
+            }
+
+            h3 {
+                color: darkgray;
+                margin: auto;
+                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                width: 800px;
+                font-size: $font-size-h3;
+                
+            }
+
+            .slider {
+                overflow: hidden;
+                width: 800px;
+                height: 500px;
+                margin: auto;
+
+                ul {
+                    display: flex;
+                    width: 400%;
+                    animation: slide 20s infinite alternate ease-in-out;
+                    padding: 0%;
+
+                    li {
+                        width: 100%;
+                        list-style: none;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            @keyframes slide {
+                0% {
+                    margin-left: 0;
+                }
+
+                20% {
+                    margin-left: 0;
+                }
+
+                25% {
+                    margin-left: -100%;
+                }
+
+                45% {
+                    margin-left: -100%;
+                }
+
+                50% {
+                    margin-left: -200%;
+                }
+
+                70% {
+                    margin-left: -200%;
+                }
+
+                75% {
+                    margin-left: -300%;
+                }
+
+                100% {
+                    margin-left: -300%;
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            margin-top: 100px;
+
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: gray;
+                    margin-bottom: 25px;
+                    font-size: $font-size-h3;
+                }
+
+                img {
+                    margin: 50px;
+                    width: 50px;
+                    height: 50px;
+                    transition: 0.3s;
+                }
+
+                img:hover {
+                    transform: scale(1.3);
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+/*tablet design - nosotros*/
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .body_nosotros {
+        width: 100%;
+
+        main {
+            margin: 0 $margin-main;
+            margin-top: $margin-top-main;
+
+            h2 {
+                color: gray;
+                text-align: center;
+                font-size: $font-size-h2;
+            }
+
+            h3 {
+                color: darkgray;
+                margin: auto;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                width: 100%;
+                font-size: $font-size-h3;
+                text-align: center;
+            }
+
+            .slider {
+                overflow: hidden;
+                width: 100%;
+                height: auto;
+                margin: auto;
+
+                ul {
+                    display: flex;
+                    width: 400%;
+                    animation: slide 20s infinite alternate ease-in-out;
+                    padding: 0%;
+
+                    li {
+                        width: 100%;
+                        list-style: none;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                @keyframes slide {
+                    0% {
+                        margin-left: 0;
+                    }
+
+                    20% {
+                        margin-left: 0;
+                    }
+
+                    25% {
+                        margin-left: -100%;
+                    }
+
+                    45% {
+                        margin-left: -100%;
+                    }
+
+                    50% {
+                        margin-left: -200%;
+                    }
+
+                    70% {
+                        margin-left: -200%;
+                    }
+
+                    75% {
+                        margin-left: -300%;
+                    }
+
+                    100% {
+                        margin-left: -300%;
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            margin-top: 50px;
+
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: gray;
+                    font-size: $font-size-h3;
+                    margin-bottom: 0;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin: 50px;
+                }
+            }
+        }
+    }
+}
+
+
+/*mobile design - nosotros*/
+
+@media screen and (max-width: 480px) {
+    .body_nosotros {
+        width: 100%;
+
+        main {
+            margin: 0 $margin-main;
+            margin-top: $margin-top-main;
+
+            h2 {
+                color: gray;
+                text-align: center;
+                font-size: $font-size-h2;
+            }
+
+            h3 {
+                color: darkgray;
+                margin: auto;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                width: 100%;
+                font-size: $font-size-h3;
+                text-align: center;
+            }
+
+            .slider {
+                overflow: hidden;
+                width: 100%;
+                height: auto;
+                margin: auto;
+
+                ul {
+                    display: flex;
+                    width: 400%;
+                    animation: slide 18s infinite alternate ease-in-out;
+                    padding: 0%;
+
+                    li {
+                        width: 100%;
+                        list-style: none;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            @keyframes slide {
+                0% {
+                    margin-left: 0;
+                }
+
+                20% {
+                    margin-left: 0;
+                }
+
+                25% {
+                    margin-left: -100%;
+                }
+
+                45% {
+                    margin-left: -100%;
+                }
+
+                50% {
+                    margin-left: -200%;
+                }
+
+                70% {
+                    margin-left: -200%;
+                }
+
+                75% {
+                    margin-left: -300%;
+                }
+
+                100% {
+                    margin-left: -300%;
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            margin-top: 50px;
+
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: gray;
+                    font-size: $font-size-h3;
+                    margin-bottom: 0;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*desktop design - servicios*/
+
+@media screen and (min-width: 1025px) {
+    .body_servicios {
+        width: 100%;
+
+        main {
+            margin-top: $margin-top-main;
+            h2 {
+                text-align: center;
+                color: gray;
+                text-decoration: underline;
+                font-size: $font-size-h2;
+            }
+
+            .educacion,
+            .entrenamiento {
+                margin-top: 100px;
+
+                h2 {
+                    text-align: center;
+                    color: gray;
+                    text-decoration: none;
+                    font-size: $font-size-h2;
+                }
+
+                .div_educacion,
+                .div_entrenamiento {
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    p {
+                        width: 800px;
+                        color: darkgray;
+                        font-size: large;
+                        margin-bottom: 50px;
+                    }
+
+                    img {
+                        width: 800px;
+                    }
+                }
+            }
+
+            .asistencia {
+                margin-top: 100px;
+
+                h2 {
+                    text-align: center;
+                    color: gray;
+                    text-decoration: none;
+                    font-size: $font-size-h2;
+                }
+
+                p {
+                    width: 800px;
+                    margin: auto;
+                    margin-top: 50px;
+                    font-size: large;
+                    color: darkgray;
+                }
+
+                .pasear,
+                .educacion_entrenamiento_casa {
+                    h3 {
+                        text-align: center;
+                        color: gray;
+                        margin-top: 50px;
+                        font-size: $font-size-h3;
+                    }
+
+                    .imgs {
+                        margin-top: 50px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-evenly;
+
+                        img {
+                            width: 500px;
+                            height: 300px;
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            margin-top: 100px;
+
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: gray;
+                    margin-bottom: 25px;
+                    font-size: $font-size-h3;
+                }
+
+                img {
+                    margin: 50px;
+                    width: 50px;
+                    height: 50px;
+                    transition: 0.3s;
+                }
+
+                img:hover {
+                    transform: scale(1.3);
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+/*tablet design - servicios*/
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .body_servicios {
+        width: 100%;
+
+        main {
+            margin: 0 $margin-main;
+            margin-top: $margin-top-main;
+
+            h2 {
+                text-align: center;
+                color: gray;
+                text-decoration: underline;
+                font-size: $font-size-h2;
+            }
+
+            .educacion,
+            .entrenamiento {
+                margin-top: 100px;
+
+                h2 {
+                    text-align: center;
+                    color: gray;
+                    text-decoration: none;
+                    font-size: $font-size-h2;
+                }
+
+                .div_educacion,
+                .div_entrenamiento {
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    p {
+                        width: 100%;
+                        color: darkgray;
+                        font-size: large;
+                        margin-bottom: 50px;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .asistencia {
+                margin-top: 100px;
+
+                h2 {
+                    text-align: center;
+                    color: gray;
+                    text-decoration: none;
+                    font-size: $font-size-h2;
+                }
+
+                p {
+                    width: 100%;
+                    margin: auto;
+                    margin-top: 50px;
+                    font-size: large;
+                    color: darkgray;
+                }
+
+                .pasear,
+                .educacion_entrenamiento_casa {
+                    h3 {
+                        text-align: center;
+                        color: gray;
+                        margin-top: 100px;
+                        font-size: $font-size-h3;
+                    }
+
+                    .imgs {
+                        margin-top: 50px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        row-gap: 50px;
+
+                        img {
+                            width: 500px;
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            margin-top: 50px;
+
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: gray;
+                    font-size: $font-size-h3;
+                    margin-bottom: 0;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*mobile design - servicios*/
+
+@media screen and (max-width: 480px) {
+    .body_servicios {
+        width: 100%;
+
+        main {
+            margin: 0 $margin-main;
+            margin-top: $margin-top-main;
+
+            h2 {
+                text-align: center;
+                color: gray;
+                text-decoration: underline;
+                font-size: $font-size-h2;
+            }
+
+            .educacion,
+            .entrenamiento {
+                margin-top: 100px;
+
+                h2 {
+                    text-align: center;
+                    color: gray;
+                    text-decoration: none;
+                    font-size: $font-size-h2;
+                }
+
+                .div_educacion,
+                .div_entrenamiento {
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    p {
+                        width: 100%;
+                        color: darkgray;
+                        font-size: large;
+                        margin-bottom: 50px;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .asistencia {
+                margin-top: 100px;
+
+                h2 {
+                    text-align: center;
+                    color: gray;
+                    text-decoration: none;
+                    font-size: $font-size-h2;
+                }
+
+                p {
+                    width: 100%;
+                    margin: auto;
+                    margin-top: 50px;
+                    font-size: large;
+                    color: darkgray;
+                }
+
+                .pasear,
+                .educacion_entrenamiento_casa {
+                    h3 {
+                        text-align: center;
+                        color: gray;
+                        margin-top: 100px;
+                        font-size: $font-size-h3;
+                    }
+
+                    .imgs {
+                        margin-top: 50px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        row-gap: 50px;
+
+                        img {
+                            width: 300px;
+                            height: 200px;
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            margin-top: 50px;
+
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: gray;
+                    font-size: $font-size-h3;
+                    margin-bottom: 0;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*desktop design - productos*/
+
+@media screen and (min-width: 1025px) {
+    .body_productos {
+        width: 100%;
+
+        main {
+            margin-top: $margin-top-main;
+
+            .ProductosCaninos,
+            .ProductosFelinos {
+                border-top: 0;
+                border-bottom: 2px;
+                border-left: 0;
+                border-right: 0;
+                border-style: solid;
+                border-color: lightgray;
+
+                h2 {
+                    color: gray;
+                    text-align: center;
+                    font-size: $font-size-h2;
+                }
+
+                .alimentos,
+                .accesorios {
+                    margin-top: 50px;
+                    margin-bottom: 100px;
+
+                    h3 {
+                        color: darkgray;
+                        font-size: $font-size-h3;
+                        text-align: center;
+                    }
+
+                    .items_alimentos,
+                    .items_accesorios {
+                        margin-top: 50px;
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        row-gap: 50px;
+
+                        div {
+                            width: 200px;
+                            height: auto;
+                            border: 2px;
+                            border-style: solid;
+                            border-color: lightgray;
+                            border-radius: 10px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            text-align: center;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            row-gap: 10px;
+
+                            p {
+                                color: black;
+                                font-size: large;
+                                margin: 10px;
+                            }
+
+                            img {
+                                width: 150px;
+                                height: 150px;
+                                margin: auto;
+                            }
+
+                            .precio {
+                                color: gray;
+                            }
+
+                            .hay_stock {
+                                color: green;
+                            }
+
+                            .no_hay_stock {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            margin-top: 100px;
+
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: gray;
+                    margin-bottom: 25px;
+                    font-size: $font-size-h3;
+                }
+
+                img {
+                    margin: 50px;
+                    width: 50px;
+                    height: 50px;
+                    transition: 0.3s;
+                }
+
+                img:hover {
+                    transform: scale(1.3);
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+/*tablet design - productos*/
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .body_productos {
+        width: 100%;
+
+        main {
+            margin: 0 $margin-main;
+            margin-top: $margin-top-main;
+
+            .ProductosCaninos,
+            .ProductosFelinos {
+                border-top: 0;
+                border-bottom: 2px;
+                border-left: 0;
+                border-right: 0;
+                border-style: solid;
+                border-color: lightgray;
+
+                h2 {
+                    color: gray;
+                    text-align: center;
+                    font-size: $font-size-h2;
+                }
+
+                .alimentos,
+                .accesorios {
+                    margin-top: 50px;
+                    margin-bottom: 100px;
+
+                    h3 {
+                        color: darkgray;
+                        font-size: $font-size-h3;
+                        text-align: center;
+                    }
+
+                    .items_alimentos,
+                    .items_accesorios {
+                        margin-top: 50px;
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        row-gap: 50px;
+                        justify-content: center;
+
+                        div {
+                            width: 200px;
+                            height: auto;
+                            border: 2px;
+                            border-style: solid;
+                            border-color: lightgray;
+                            border-radius: 10px;
+                            margin-left: auto;
+                            margin-right: auto;
+
+                            p {
+                                color: black;
+                                font-size: large;
+                                margin: 10px;
+                                text-align: center;
+                            }
+
+                            img {
+                                width: 150px;
+                                height: 150px;
+                                margin: 25px;
+                            }
+
+                            .precio {
+                                color: gray;
+                            }
+
+                            .hay_stock {
+                                color: green;
+                            }
+
+                            .no_hay_stock {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            margin-top: 50px;
+
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: gray;
+                    font-size: $font-size-h3;
+                    margin-bottom: 0;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*mobile design - productos*/
+
+@media screen and (max-width: 480px) {
+    .body_productos {
+        width: 100%;
+
+        main {
+            margin: 0 $margin-main;
+            margin-top: $margin-top-main;
+
+            .ProductosCaninos,
+            .ProductosFelinos {
+                border-top: 0;
+                border-bottom: 2px;
+                border-left: 0;
+                border-right: 0;
+                border-style: solid;
+                border-color: lightgray;
+
+                h2 {
+                    color: gray;
+                    text-align: center;
+                    font-size: $font-size-h2;
+                }
+
+                .alimentos,
+                .accesorios {
+                    margin-top: 50px;
+                    margin-bottom: 100px;
+
+                    h3 {
+                        color: darkgray;
+                        font-size: $font-size-h3;
+                        text-align: center;
+                    }
+
+                    .items_alimentos,
+                    .items_accesorios {
+                        margin-top: 50px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        row-gap: 50px;
+
+                        div {
+                            width: 200px;
+                            height: auto;
+                            border: 2px;
+                            border-style: solid;
+                            border-color: lightgray;
+                            border-radius: 10px;
+
+                            p {
+                                color: black;
+                                font-size: large;
+                                margin: 10px;
+                                text-align: center;
+                            }
+
+                            img {
+                                width: 150px;
+                                height: 150px;
+                                margin: 25px;
+                            }
+
+                            .precio {
+                                color: gray;
+                            }
+
+                            .hay_stock {
+                                color: green;
+                            }
+
+                            .no_hay_stock {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            margin-top: 50px;
+
+            .redes {
+                text-align: center;
+
+                h3 {
+                    color: gray;
+                    font-size: $font-size-h3;
+                    margin-bottom: 0;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin: 50px;
+                }
+            }
+        }
+    }
+}
